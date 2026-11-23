@@ -36,9 +36,9 @@ El desarrollo se dividió en **dos fases clave**:
 
 ## 👥 Equipo de Desarrollo
 
-* **Eric Alexis Guerrero Espiritusanto** — [GitHub](https://github.com/)
+* **Eric Alexis Guerrero Espiritusanto** — [@alexiis23](https://github.com/Alexiis23)
 * **Juan Araque Martínez** — [@juan-araque](https://github.com/juan-araque)
-* **Maximiliano Martín Martínez** — [GitHub](https://github.com/)
+* **Maximiliano Martín Martínez** — [@imaxgameplays](https://github.com/imaxgameplaysyt-spec)
 
 ---
 
