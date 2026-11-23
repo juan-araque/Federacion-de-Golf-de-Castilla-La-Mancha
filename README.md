@@ -6,7 +6,7 @@ Desarrollo, maquetación y migración a producción del sitio web oficial de la 
 
 ---
 
-## 📋 Descripción del Proyecto
+##  Descripción del Proyecto
 
 El objetivo principal fue diseñar y construir desde cero la plataforma web de la federación para centralizar la información institucional, competiciones, clubes federados y noticias del sector en la región.
 
@@ -16,7 +16,7 @@ El desarrollo se dividió en **dos fases clave**:
 
 ---
 
-## 🛠️ Tecnologías Utilizadas
+##  Tecnologías Utilizadas
 
 * **Frontend:** HTML5, CSS3, JavaScript (ES6+)
 * **Backend & CMS:** PHP, WordPress (desarrollo e integración de plantillas a medida)
@@ -25,7 +25,7 @@ El desarrollo se dividió en **dos fases clave**:
 
 ---
 
-## ✨ Características Principales
+##  Características Principales
 
 * **Arquitectura multipágina:** Amplia estructura de secciones adaptadas a las necesidades de jugadores, clubes y torneos de la federación.
 * **Diseño Responsive:** Maquetación adaptada a dispositivos móviles, tablets y escritorio.
