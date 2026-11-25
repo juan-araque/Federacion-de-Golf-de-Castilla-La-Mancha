@@ -1,0 +1,251 @@
+<?php
+/**
+ * Template Name: Comités
+ *
+ * @package FGCLM_Theme_v071
+ */
+
+get_header();
+?>
+
+<style>
+body { padding-top: 70px; }
+    .junta-section { padding: 64px 6rem; max-width: 1100px; margin: 0 auto; }
+    .junta-intro { font-size: 15px; color: var(--gray-600); line-height: 1.8; max-width: 720px; margin-bottom: 48px; }
+    .junta-block-title {
+      font-family: var(--font-display);
+      font-size: 1.5rem; font-weight: 700;
+      color: var(--green-dark);
+      margin-bottom: 24px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--gold);
+    }
+    .junta-sub-title {
+      font-family: var(--font-display);
+      font-size: 1.25rem; font-weight: 700;
+      color: var(--green-dark);
+      margin-top: 40px;
+      margin-bottom: 20px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--gray-200);
+    }
+    .junta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+      margin-bottom: 56px;
+    }
+    .junta-card {
+      background: var(--white);
+      border: 1.5px solid var(--gray-100);
+      padding: 28px 22px;
+      transition: all 0.2s;
+    }
+    .junta-card:hover { border-color: var(--gold); box-shadow: 0 6px 20px rgba(10,61,46,0.07); }
+    .junta-card-cargo {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+    .junta-card-nombre {
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--green-dark);
+      line-height: 1.3;
+    }
+    .junta-card-prov {
+      font-size: 12px;
+      color: var(--gray-300);
+      margin-top: 6px;
+    }
+    .junta-card-wide {
+      grid-column: 1 / -1;
+    }
+    .vocales-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 16px 24px;
+      margin-top: 16px;
+    }
+    @media (max-width: 1100px) { .junta-section { padding: 48px 2.5rem; } }
+    @media (max-width: 640px) { .junta-section { padding: 32px 1.25rem; } }
+</style>
+
+<div class="page-hero">
+  <div class="page-hero-content">
+    <div class="page-hero-label">La Federación</div>
+    <h1>Comités <em>y Delegados</em></h1>
+    <p>Conoce la estructura de comités y delegaciones de la Federación de Golf de Castilla-La Mancha.</p>
+  </div>
+</div>
+
+<div class="junta-section">
+  <div class="junta-block-title">Comités 2025-2028</div>
+  
+  <div class="junta-grid">
+    <div class="junta-card">
+      <div class="junta-card-cargo">Director Deportivo</div>
+      <div class="junta-card-nombre">Óscar Herradura Pérez</div>
+    </div>
+    
+    <div class="junta-card">
+      <div class="junta-card-cargo">Director Técnico</div>
+      <div class="junta-card-nombre">David Pinza Jiménez</div>
+      <div class="junta-card-nombre" style="margin-top: 8px;">Aitor Pardo Rodríguez</div>
+    </div>
+  </div>
+
+  <div class="junta-sub-title">Comité Relaciones Institucionales</div>
+  <div class="junta-grid">
+    <div class="junta-card">
+      <div class="junta-card-cargo">Presidente</div>
+      <div class="junta-card-nombre">José Vioque Lorenzo</div>
+    </div>
+  </div>
+
+  <div class="junta-sub-title">Comité Reglas, Árbitros y Campos</div>
+  <div class="junta-grid">
+    <div class="junta-card">
+      <div class="junta-card-cargo">Presidente</div>
+      <div class="junta-card-nombre">D. Antonio Sánchez Pérez</div>
+    </div>
+  </div>
+
+  <div class="junta-sub-title">Comité Patrocinios y Profesionales</div>
+  <div class="junta-grid">
+    <div class="junta-card">
+      <div class="junta-card-cargo">Presidente</div>
+      <div class="junta-card-nombre">D. Joaquín Mínguez Cano</div>
+    </div>
+  </div>
+
+  <div class="junta-sub-title">Comité Amateur Masculino</div>
+  <div class="junta-grid">
+    <div class="junta-card">
+      <div class="junta-card-cargo">Presidente</div>
+      <div class="junta-card-nombre">Ángel Marquina Rivero</div>
+    </div>
+  </div>
+
+  <div class="junta-sub-title">Comité Amateur Femenino</div>
+  <div class="junta-grid">
+    <div class="junta-card">
+      <div class="junta-card-cargo">Presidenta</div>
+      <div class="junta-card-nombre">Susana Navarro Gabaldón</div>
+    </div>
+    <div class="junta-card junta-card-wide">
+      <div class="junta-card-cargo">Vocales</div>
+      <div class="vocales-grid">
+        <div class="junta-card-nombre">María Luisa García Garrido</div>
+        <div class="junta-card-nombre">Lorena Page Llandrés</div>
+        <div class="junta-card-nombre">Paula Sanz Gómez</div>
+        <div class="junta-card-nombre">Emilia López Fernández</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="junta-sub-title">Comité Juvenil</div>
+  <div class="junta-grid">
+    <div class="junta-card">
+      <div class="junta-card-cargo">Presidente</div>
+      <div class="junta-card-nombre">David Pinza Jiménez</div>
+    </div>
+    <div class="junta-card junta-card-wide">
+      <div class="junta-card-cargo">Vocales</div>
+      <div class="vocales-grid">
+        <div class="junta-card-nombre">Ángel Soria Cantero</div>
+        <div class="junta-card-nombre">Miguel Ángel Calero</div>
+        <div class="junta-card-nombre">Diego García Page</div>
+        <div class="junta-card-nombre">José Antonio Gude</div>
+        <div class="junta-card-nombre">Pablo Jesús Hernández de Torres</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="junta-sub-title">Comité Senior Masculino/Femenino</div>
+  <div class="junta-grid">
+    <div class="junta-card">
+      <div class="junta-card-cargo">Presidente</div>
+      <div class="junta-card-nombre">Joaquín Mesas Esteso</div>
+    </div>
+    <div class="junta-card">
+      <div class="junta-card-cargo">Vocal</div>
+      <div class="junta-card-nombre">Jesús Ortega Jiménez</div>
+    </div>
+  </div>
+
+  <div class="junta-sub-title">Comité Profesionales</div>
+  <div class="junta-grid">
+    <div class="junta-card">
+      <div class="junta-card-cargo">Presidente</div>
+      <div class="junta-card-nombre">Joaquín Ángel Mínguez Cano</div>
+    </div>
+  </div>
+
+  <div class="junta-sub-title">Comité de Pitch & Putt</div>
+  <div class="junta-grid">
+    <div class="junta-card">
+      <div class="junta-card-cargo">Presidente</div>
+      <div class="junta-card-nombre">Toribio Zarco González</div>
+    </div>
+    <div class="junta-card">
+      <div class="junta-card-cargo">Vocal</div>
+      <div class="junta-card-nombre">Felipe Ruano Martín</div>
+    </div>
+  </div>
+
+  <div class="junta-sub-title">Comité de Golf Adaptado</div>
+  <div class="junta-grid">
+    <div class="junta-card">
+      <div class="junta-card-cargo">Presidente</div>
+      <div class="junta-card-nombre">Ángel Rincón Muñoz</div>
+    </div>
+  </div>
+
+  <div class="junta-sub-title">Comité de Campos Rústicos</div>
+  <div class="junta-grid">
+    <div class="junta-card">
+      <div class="junta-card-cargo">Presidente</div>
+      <div class="junta-card-nombre">José Miguel Molina Cubero</div>
+    </div>
+  </div>
+
+  <div class="junta-sub-title">Comité de Disciplina Deportiva</div>
+  <div class="junta-grid">
+    <div class="junta-card">
+      <div class="junta-card-cargo">Juez Único</div>
+      <div class="junta-card-nombre">Fernando Cebrián Tapia</div>
+    </div>
+  </div>
+
+  <div class="junta-block-title" style="margin-top: 60px;">Delegados Provinciales 2024-2028</div>
+  <div class="junta-grid">
+    <div class="junta-card">
+      <div class="junta-card-cargo">Albacete</div>
+      <div class="junta-card-nombre">Pascual Martínez Cuesta</div>
+    </div>
+    <div class="junta-card">
+      <div class="junta-card-cargo">Ciudad Real</div>
+      <div class="junta-card-nombre">Agustín Guarnizo Fúnez</div>
+    </div>
+    <div class="junta-card">
+      <div class="junta-card-cargo">Cuenca</div>
+      <div class="junta-card-nombre">Ángel Marquina Rivero</div>
+    </div>
+    <div class="junta-card">
+      <div class="junta-card-cargo">Guadalajara</div>
+      <div class="junta-card-nombre">Jesús Ortega Jiménez</div>
+    </div>
+    <div class="junta-card">
+      <div class="junta-card-cargo">Toledo</div>
+      <div class="junta-card-nombre">María Encarna Hernández de Cáceres</div>
+    </div>
+  </div>
+</div>
+
+<?php
+get_footer();

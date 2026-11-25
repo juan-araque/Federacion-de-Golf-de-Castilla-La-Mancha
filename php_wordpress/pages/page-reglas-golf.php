@@ -1,0 +1,180 @@
+<?php
+/**
+ * Template Name: Reglas de Golf
+ *
+ * @package FGCLM_Theme_v071
+ */
+
+get_header();
+?>
+
+<style>
+body { padding-top: 70px; }
+    .reglas-section { padding: 64px 6rem; max-width: 1100px; margin: 0 auto; }
+    .block-title {
+      font-family: var(--font-display);
+      font-size: 1.4rem; font-weight: 700;
+      color: var(--green-dark);
+      margin-bottom: 24px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--gold);
+    }
+    .intro-text { font-size: 15px; color: var(--gray-600); line-height: 1.8; max-width: 720px; margin-bottom: 48px; }
+    .circ-list { margin-bottom: 48px; }
+    .info-box {
+      background: var(--gray-50);
+      border: 1px solid var(--gray-100);
+      padding: 32px 36px;
+      margin-bottom: 48px;
+    }
+    .info-box p { font-size: 14px; color: var(--gray-600); line-height: 1.7; margin-bottom: 12px; }
+    .info-box p:last-child { margin-bottom: 0; }
+    @media (max-width: 1100px) { .reglas-section { padding: 48px 2.5rem; } }
+    @media (max-width: 640px) { .reglas-section { padding: 32px 1.25rem; } }
+</style>
+
+<div class="page-hero">
+  <div class="page-hero-content">
+    <div class="page-hero-label">Reglamentos</div>
+    <h1>Reglas de <em>Golf</em></h1>
+    <p>El código oficial de las Reglas de Golf vigente, aplicable en todas las competiciones de la FGCLM.</p>
+  </div>
+</div>
+
+<div class="reglas-section">
+  <p class="intro-text">
+    Las Reglas de Golf constituyen el código oficial que rige la práctica del golf en todo el mundo. Son elaboradas conjuntamente por el R&A (Royal and Ancient Golf Club of St Andrews) y la USGA (United States Golf Association) y entran en vigor el 1 de enero de 2019, con revisiones periódicas. Todas las competiciones de la Federación de Golf de Castilla-La Mancha se disputan conforme a estas reglas.
+  </p>
+
+  <div class="block-title">Documentos y Reglas de Golf</div>
+  <ul class="circ-list">
+    <a href="https://www.rfegolf.es/ArtculosDocumento/REGLAS/Reglas%202023/1%20Libro%20Reglas%20Completas%20de%20Golf%202023%20FINAL.pdf" class="circ-item" target="_blank">
+      <div class="circ-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      <div class="circ-info">
+        <div class="circ-titulo">Reglas de Golf 2023 en español</div>
+        <div class="circ-meta">RFEG · 2023</div>
+      </div>
+    </a>
+    <a href="https://www.rfegolf.es/ArtculosDocumento/REGLAS/Reglas%202023/2%20Rules%20of%20Golf%20RyA%202023.pdf" class="circ-item" target="_blank">
+      <div class="circ-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      <div class="circ-info">
+        <div class="circ-titulo">Reglas de Golf 2023 en inglés</div>
+        <div class="circ-meta">RFEG · 2023</div>
+      </div>
+    </a>
+    <a href="https://www.rfegolf.es/ArtculosDocumento/REGLAS/Reglas%202024/3%20Aclaraciones%20Adicionales%20a%20las%20Reglas%20Golf%202023%204%20Ene%202024.pdf" class="circ-item" target="_blank">
+      <div class="circ-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      <div class="circ-info">
+        <div class="circ-titulo">Aclaraciones a las Reglas de Golf 2023 en español</div>
+        <div class="circ-meta">RFEG · 2024</div>
+      </div>
+    </a>
+    <a href="https://www.rfegolf.es/ArtculosDocumento/REGLAS/Reglas%202024/4%20Additional%20Clarifications%20of%20the%20Rules%20of%20Golf%202023%20January%204%202024.pdf" class="circ-item" target="_blank">
+      <div class="circ-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      <div class="circ-info">
+        <div class="circ-titulo">Aclaraciones a las Reglas de Golf 2023 en inglés</div>
+        <div class="circ-meta">RFEG · 2024</div>
+      </div>
+    </a>
+    <a href="https://rfegolf.es/ArtculosDocumento/REGLAS/Reglas%202026/REGLAS%20LOCALES%20Y%20CONDICIONES%20DE%20LA%20COMPETICIO%CC%81N%20ESP%20REVMM.pdf" class="circ-item" target="_blank">
+      <div class="circ-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      <div class="circ-info">
+        <div class="circ-titulo">Reglas Locales Permanentes de la RFEG 2026 en español</div>
+        <div class="circ-meta">RFEG · 2026</div>
+      </div>
+    </a>
+    <a href="https://rfegolf.es/ArtculosDocumento/REGLAS/Reglas%202026/REGLAS%20LOCALES%20Y%20CONDICIONES%20DE%20LA%20COMPETICIO%CC%81N%20-%20INGLE%CC%81S.pdf" class="circ-item" target="_blank">
+      <div class="circ-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      <div class="circ-info">
+        <div class="circ-titulo">Reglas Locales Permanentes de la RFEG 2026 en inglés</div>
+        <div class="circ-meta">RFEG · 2026</div>
+      </div>
+    </a>
+    <a href="https://www.fedgolfclm.com/wp-content/uploads/2025/04/Reglas-Locales-Permanentes-FGCLM-2025.pdf" class="circ-item" target="_blank">
+      <div class="circ-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      <div class="circ-info">
+        <div class="circ-titulo">Reglas Locales Permanentes de la FGCLM 2025</div>
+        <div class="circ-meta">FGCLM · 2025</div>
+      </div>
+    </a>
+    <a href="https://www.rfegolf.es/ArtculosDocumento/REGLAS/Reglas%202024/11%20Triptico%20Reglas%20Locales%20(ESP%202024)%20Final.pdf" class="circ-item" target="_blank">
+      <div class="circ-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      <div class="circ-info">
+        <div class="circ-titulo">Tríptico Reglas Locales en español</div>
+        <div class="circ-meta">RFEG · 2024</div>
+      </div>
+    </a>
+    <a href="https://www.rfegolf.es/ArtculosDocumento/REGLAS/Reglas%202024/12%20Triptico%20Reglas%20Locales%20(ENG%202024)%20Final.pdf" class="circ-item" target="_blank">
+      <div class="circ-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      <div class="circ-info">
+        <div class="circ-titulo">Tríptico Reglas Locales en inglés</div>
+        <div class="circ-meta">RFEG · 2024</div>
+      </div>
+    </a>
+    <a href="http://www.rfegolf.es/ArtculosDocumento/REGLAS/Guia%20a%20las%20Reglas%20sobre%20palos%20y%20bolas%202010.pdf" class="circ-item" target="_blank">
+      <div class="circ-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      <div class="circ-info">
+        <div class="circ-titulo">Guía a las Reglas sobre Palos y Bola</div>
+        <div class="circ-meta">RFEG</div>
+      </div>
+    </a>
+    <a href="http://www.rfegolf.es/Noticias/NewsDetails.aspx?NewsId=9066" class="circ-item" target="_blank">
+      <div class="circ-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      <div class="circ-info">
+        <div class="circ-titulo">VÍDEOS Reglas de Golf</div>
+        <div class="circ-meta">RFEG</div>
+      </div>
+    </a>
+    <a href="http://www.rfegolf.es/Noticias/NewsDetails.aspx?NewsId=10234" class="circ-item" target="_blank">
+      <div class="circ-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      <div class="circ-info">
+        <div class="circ-titulo">Academia de Reglas on line</div>
+        <div class="circ-meta">RFEG</div>
+      </div>
+    </a>
+    <a href="https://rfegolf.es/ArtculosDocumento/libro%20verde.pdf" class="circ-item" target="_blank">
+      <div class="circ-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      <div class="circ-info">
+        <div class="circ-titulo">Libro verde de la RFEG</div>
+        <div class="circ-meta">RFEG</div>
+      </div>
+    </a>
+    <a href="http://www.rfegolf.es/ArtculosDocumento/REGLAS/Reglas%202019/Libro%20del%20Match%202019.pdf" class="circ-item" target="_blank">
+      <div class="circ-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      <div class="circ-info">
+        <div class="circ-titulo">Libro del Match</div>
+        <div class="circ-meta">RFEG · 2019</div>
+      </div>
+    </a>
+    <a href="https://www.rfegolf.es/ArtculosDocumento/OTRAS%20PUBLICACIONES/Otras%20publicaciones%202020/2020%20Libro%20Reglas%20ni%C3%B1os.pdf" class="circ-item" target="_blank">
+      <div class="circ-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      <div class="circ-info">
+        <div class="circ-titulo">Libro Juvenil Yo me sé las Reglas</div>
+        <div class="circ-meta">RFEG · 2020</div>
+      </div>
+    </a>
+    <a href="http://www.rfegolf.es/ArtculosDocumento/REGLAS/Reglas%202021/Reglamento%20de%20%C3%81rbitros%20RFEG.pdf" class="circ-item" target="_blank">
+      <div class="circ-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      <div class="circ-info">
+        <div class="circ-titulo">Reglamento de Árbitros RFEG</div>
+        <div class="circ-meta">RFEG · 2021</div>
+      </div>
+    </a>
+  </ul>
+
+  <div class="block-title">Recursos y Materiales</div>
+  <div class="info-box">
+    <p>
+      El texto completo de las Reglas de Golf, las Definiciones, las Notas al Comité, la Guía Oficial de las Reglas y el Diccionario de Penalizaciones están disponibles en el portal oficial del R&A y la RFEG. La Federación de Golf de Castilla-La Mancha recomienda a todos sus federados familiarizarse con ellas.
+    </p>
+    <p>
+      Las <strong>Reglas Locales</strong> específicas de cada campo y competición se publican en la hoja de salida de cada torneo. Siempre prevalecen sobre las condiciones generales cuando así lo establezca el Comité.
+    </p>
+    <p>
+      Si tienes dudas sobre la aplicación de una regla durante una competición de la FGCLM, puedes consultar con el árbitro designado en la prueba. Para consultas previas, contacta con el Comité de Reglas de la federación en <strong>federacion@fedgolfclm.com</strong>.
+    </p>
+  </div>
+</div>
+
+<?php
+get_footer();
