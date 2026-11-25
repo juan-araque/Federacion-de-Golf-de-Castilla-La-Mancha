@@ -1,0 +1,231 @@
+<?php
+/**
+ * Template Name: Licencia y Hándicap
+ *
+ * @package FGCLM_Theme_v071
+ */
+
+get_header();
+?>
+
+<style>
+body { padding-top: 70px; }
+    .licencia-section { padding: 64px 6rem; max-width: 1100px; margin: 0 auto; }
+    .block-title {
+      font-family: var(--font-display);
+      font-size: 1.4rem; font-weight: 700;
+      color: var(--green-dark);
+      margin-bottom: 24px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--gold);
+    }
+    .intro-text { font-size: 15px; color: var(--gray-600); line-height: 1.8; max-width: 720px; margin-bottom: 48px; }
+
+    /* ── Cards de enlaces ── */
+    .licencia-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+      margin-bottom: 56px;
+    }
+    .licencia-card {
+      display: flex; align-items: center; gap: 20px;
+      background: var(--white);
+      border: 1.5px solid var(--gray-100);
+      padding: 28px 26px;
+      text-decoration: none; color: inherit;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .licencia-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 4px; height: 100%;
+      background: var(--gold);
+      transform: scaleY(0);
+      transition: transform 0.3s ease;
+      transform-origin: top;
+    }
+    .licencia-card:hover {
+      border-color: var(--gold);
+      box-shadow: 0 8px 28px rgba(10,61,46,0.08);
+      transform: translateY(-2px);
+    }
+    .licencia-card:hover::before { transform: scaleY(1); }
+    .licencia-card-icon {
+      width: 52px; height: 52px; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      background: var(--green-light);
+      border-radius: 8px;
+      color: var(--green-dark);
+      transition: all 0.3s ease;
+    }
+    .licencia-card:hover .licencia-card-icon {
+      background: var(--green-dark);
+      color: var(--gold);
+    }
+    .licencia-card-body { flex: 1; min-width: 0; }
+    .licencia-card-title {
+      font-family: var(--font-display);
+      font-size: 1rem; font-weight: 700;
+      color: var(--green-dark);
+      margin-bottom: 6px;
+      transition: color 0.2s;
+    }
+    .licencia-card:hover .licencia-card-title { color: var(--green-accent); }
+    .licencia-card-desc {
+      font-size: 12.5px; color: var(--gray-300);
+      line-height: 1.5;
+    }
+    .licencia-card-arrow {
+      flex-shrink: 0; color: var(--gray-200);
+      transition: all 0.3s ease;
+    }
+    .licencia-card:hover .licencia-card-arrow {
+      color: var(--gold);
+      transform: translateX(4px);
+    }
+    .licencia-card-external {
+      display: inline-flex; align-items: center; gap: 4px;
+      font-size: 10px; font-weight: 700; color: var(--gray-200);
+      text-transform: uppercase; letter-spacing: 1px;
+      margin-top: 4px;
+    }
+
+    /* ── Info general (mantener contenido existente debajo) ── */
+    .handicap-box {
+      background: var(--gray-50);
+      border: 1px solid var(--gray-100);
+      padding: 32px 36px;
+      margin-bottom: 48px;
+    }
+    .handicap-box p { font-size: 14px; color: var(--gray-600); line-height: 1.7; margin-bottom: 14px; }
+    .handicap-box p:last-child { margin-bottom: 0; }
+
+    @media (max-width: 1100px) { .licencia-section { padding: 48px 2.5rem; } }
+    @media (max-width: 640px) {
+      .licencia-section { padding: 32px 1.25rem; }
+      .licencia-cards { grid-template-columns: 1fr; }
+    }
+</style>
+
+<div class="page-hero">
+  <div class="page-hero-content">
+    <div class="page-hero-label">La Federación</div>
+    <h1>Licencia y <em>Hándicap</em></h1>
+    <p>Todo lo que necesitas saber para federarte y gestionar tu hándicap en Castilla-La Mancha.</p>
+  </div>
+</div>
+
+<div class="licencia-section">
+  <p class="intro-text">
+    La licencia federativa es el documento que acredita tu condición de jugador/a de golf federado/a en Castilla-La Mancha. Te permite participar en competiciones oficiales, obtener y mantener tu hándicap WHS, y acceder a los seguros de accidente y responsabilidad civil de la federación.
+  </p>
+
+  <div class="block-title">Gestiones y Servicios</div>
+  <div class="licencia-cards">
+
+    <!-- 1. Trámites y Cuotas (interno) -->
+    <a href="<?php echo esc_url( home_url( '/licenHandi/tramites-cuotas/' ) ); ?>" class="licencia-card" id="card-tramites">
+      <div class="licencia-card-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+      </div>
+      <div class="licencia-card-body">
+        <div class="licencia-card-title">Trámites y Cuotas</div>
+        <div class="licencia-card-desc">Cómo obtener la licencia federativa, tramitación, categorías e importes anuales.</div>
+      </div>
+      <div class="licencia-card-arrow">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </div>
+    </a>
+
+    <!-- 2. Seguro de Accidente (interno) -->
+    <a href="<?php echo esc_url( home_url( '/licenHandi/seguro-accidente/' ) ); ?>" class="licencia-card" id="card-seguro">
+      <div class="licencia-card-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <div class="licencia-card-body">
+        <div class="licencia-card-title">Seguro de Accidente</div>
+        <div class="licencia-card-desc">Pólizas de accidente y responsabilidad civil, protocolos y partes de comunicación.</div>
+      </div>
+      <div class="licencia-card-arrow">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </div>
+    </a>
+
+    <!-- 3. Obtención de Hándicap (interno) -->
+    <a href="<?php echo esc_url( home_url( '/licenHandi/obtencion-handicap/' ) ); ?>" class="licencia-card" id="card-handicap">
+      <div class="licencia-card-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      </div>
+      <div class="licencia-card-body">
+        <div class="licencia-card-title">Obtención del Hándicap</div>
+        <div class="licencia-card-desc">Procedimiento, prueba práctica y teórica para conseguir tu hándicap de juego.</div>
+      </div>
+      <div class="licencia-card-arrow">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </div>
+    </a>
+
+    <!-- 4. Consulta de Hándicap (externo RFEG) -->
+    <a href="https://rfegolf.es/PaginasServicios/Servicios.aspx" class="licencia-card" target="_blank" id="card-consulta">
+      <div class="licencia-card-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </div>
+      <div class="licencia-card-body">
+        <div class="licencia-card-title">Consulta de Hándicap</div>
+        <div class="licencia-card-desc">Accede al portal de la RFEG para consultar tu hándicap actual y servicios online.</div>
+        <div class="licencia-card-external">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Enlace externo · RFEG
+        </div>
+      </div>
+      <div class="licencia-card-arrow">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </div>
+    </a>
+
+    <!-- 5. Ficha de Hándicap (externo RFEG) -->
+    <a href="https://rfegolf.es/PaginasServicios/areadeljugador.aspx" class="licencia-card" target="_blank" id="card-ficha">
+      <div class="licencia-card-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </div>
+      <div class="licencia-card-body">
+        <div class="licencia-card-title">Ficha de Hándicap</div>
+        <div class="licencia-card-desc">Área del jugador en la RFEG: ficha personal, historial de rondas y hándicap WHS.</div>
+        <div class="licencia-card-external">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Enlace externo · RFEG
+        </div>
+      </div>
+      <div class="licencia-card-arrow">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </div>
+    </a>
+
+  </div>
+
+  <div class="block-title">Sistema de Hándicap WHS</div>
+  <div class="handicap-box">
+    <p>
+      Desde el 1 de enero de 2020, el golf mundial adoptó el <strong>World Handicap System (WHS)</strong>, el sistema unificado de hándicap impulsado por el R&A y la USGA. En España, es gestionado por la Real Federación Española de Golf (RFEG).
+    </p>
+    <p>
+      El WHS permite a los jugadores con licencia federativa obtener un <strong>Índice de Hándicap</strong> que refleja su nivel de juego potencial. Este índice se calcula a partir de las 8 mejores puntuaciones de las últimas 20 rondas registradas en competiciones o vueltas habilitadas.
+    </p>
+    <p>
+      Para <strong>consultar tu hándicap</strong>, puedes hacerlo a través del portal de la RFEG con tu número de licencia federativa. Tu club también puede informarte del procedimiento para registrar tarjetas y actualizar tu índice.
+    </p>
+    <p>
+      Si eres nuevo en el golf, el sistema WHS incluye un procedimiento de <strong>hándicap inicial</strong> basado en las primeras rondas jugadas. Los jugadores sin hándicap previo comienzan con un índice de 54.0 y lo van ajustando conforme registran tarjetas de juego.
+    </p>
+    <p>
+      Para más información sobre el sistema WHS o cualquier consulta sobre tu hándicap, contacta con la federación en <strong>federacion@fedgolfclm.com</strong> o llama al <strong>949-262300</strong>.
+    </p>
+  </div>
+</div>
+
+<?php
+get_footer();

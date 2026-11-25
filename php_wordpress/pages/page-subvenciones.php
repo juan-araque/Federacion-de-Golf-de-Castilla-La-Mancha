@@ -1,0 +1,131 @@
+<?php
+/**
+ * Template Name: Subvenciones
+ *
+ * @package FGCLM_Theme_v071
+ */
+
+get_header();
+?>
+
+<style>
+body { padding-top: 70px; }
+    .subv-section { padding: 64px 6rem; max-width: 1100px; margin: 0 auto; }
+    .block-title {
+      font-family: var(--font-display);
+      font-size: 1.4rem; font-weight: 700;
+      color: var(--green-dark);
+      margin-bottom: 24px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--gold);
+    }
+    .intro-text { font-size: 15px; color: var(--gray-600); line-height: 1.8; max-width: 720px; margin-bottom: 48px; }
+    .subv-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+    .subv-card {
+      background: var(--white);
+      border: 1.5px solid var(--gray-100);
+      padding: 30px 26px;
+      transition: all 0.2s;
+    }
+    .subv-card:hover { border-color: var(--gold); box-shadow: 0 6px 20px rgba(10,61,46,0.07); }
+    .subv-icon { font-size: 28px; margin-bottom: 12px; }
+    .subv-titulo { font-family: var(--font-display); font-size: 16px; font-weight: 700; color: var(--green-dark); margin-bottom: 8px; }
+    .subv-desc { font-size: 13px; color: var(--gray-600); line-height: 1.65; }
+    .subv-estado {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 3px 10px;
+      border-radius: 2px;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+    .estado-abierto { background: var(--green-light); color: var(--green-mid); }
+    .estado-cerrado { background: var(--gray-100); color: var(--gray-300); }
+    .estado-previsto { background: var(--gold-light); color: #856404; }
+    .info-box {
+      background: var(--gray-50);
+      border: 1px solid var(--gray-100);
+      padding: 32px 36px;
+      margin-bottom: 48px;
+    }
+    .info-box p { font-size: 14px; color: var(--gray-600); line-height: 1.7; margin-bottom: 12px; }
+    .info-box p:last-child { margin-bottom: 0; }
+    @media (max-width: 1100px) { .subv-section { padding: 48px 2.5rem; } }
+    @media (max-width: 640px) { .subv-section { padding: 32px 1.25rem; } }
+</style>
+
+<div class="page-hero">
+  <div class="page-hero-content">
+    <div class="page-hero-label">La Federación</div>
+    <h1><em>Subvenciones</em> y Ayudas</h1>
+    <p>Información sobre las subvenciones y ayudas disponibles para federados, clubes y deportistas de Castilla-La Mancha.</p>
+  </div>
+</div>
+
+<div class="subv-section">
+  <p class="intro-text">
+    La Federación de Golf de Castilla-La Mancha gestiona y difunde las convocatorias de subvenciones y ayudas dirigidas a deportistas, clubes y entidades relacionadas con el golf en la región.
+  </p>
+
+  <div class="block-title">Normativa y Procedimiento 2026</div>
+  <div class="info-box" style="margin-bottom: 56px;">
+    <p>
+      Consulta la normativa y el procedimiento establecido en relación con las subvenciones a jugadores por parte de la Federación de Golf de Castilla La Mancha.
+    </p>
+    <p>
+      Con objeto de que todas las subvenciones que cumplan con los requisitos exigidos tengan el mismo trato y puedan ser atendidas de la manera adecuada, ya que el número de solicitudes es cada año más numeroso y la partida presupuestaria, limitada, la Federación de Golf de Castilla La Mancha, considera, que lo más justo es recoger las peticiones de todos los torneos del año y no gastar el presupuesto en los primeros que se han celebrado.
+    </p>
+    <p>
+      Por ello, se crea un archivo con todas las solicitudes y a final de año se procederá a hacer el pago proporcional según las peticiones realizadas y el presupuesto asignado.
+    </p>
+    <p>
+      De este modo, en mayor o menor cuantía, todos los jugadores que la han solicitado correctamente tendrán una ayuda federativa.
+    </p>
+    
+    <p style="margin-top: 32px; font-size: 16px; color: var(--green-dark);">
+      <strong>NOTA IMPORTANTE – Atención a los requisitos</strong>
+    </p>
+    <p>
+      Mención especial requiere el conocimiento de los requisitos establecidos para percibir subvenciones, especificado en el texto de la circular, estableciéndose un plazo de 15 días desde la celebración del torneo susceptible de subvención para presentar la solicitud y la documentación adecuada.
+    </p>
+
+    <div style="margin-top: 32px; padding-top: 32px; border-top: 1px solid var(--gray-200);">
+      <p style="font-size: 16px; color: var(--green-dark);">
+        <strong>NORMATIVA Y PROCEDIMIENTO RELACIONADO CON LAS SUBVENCIONES A JUGADORES 2026</strong>
+      </p>
+      <div style="margin-top: 16px;">
+        <a href="https://www.fedgolfclm.com/wp-content/uploads/2026/02/cirfgclm0026.pdf" target="_blank" style="display: inline-flex; align-items: center; gap: 8px; background: var(--gold); color: var(--white); padding: 12px 24px; text-decoration: none; font-weight: 700; border-radius: 4px; transition: background 0.2s;" onmouseover="this.style.background='var(--green-dark)'" onmouseout="this.style.background='var(--gold)'">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="12" y1="18" x2="12" y2="12"></line><polyline points="9 15 12 18 15 15"></polyline></svg>
+          Ampliar información y formulario solicitud
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="block-title">Cómo Solicitar una Subvención</div>
+  <div class="info-box">
+    <p>
+      Para solicitar cualquiera de las ayudas gestionadas por la Federación de Golf de Castilla-La Mancha, es necesario ponerse en contacto con la Secretaría General antes del plazo de presentación de cada convocatoria.
+    </p>
+    <p>
+      La documentación requerida varía según el tipo de subvención, pero habitualmente incluye: formulario oficial de solicitud, DNI/NIE del solicitante, licencia federativa en vigor, memoria justificativa del proyecto o actividad, y presupuesto detallado de gastos.
+    </p>
+    <p>
+      Para clubes: también se solicita el NIF de la entidad, estatutos vigentes, acta de junta directiva y certificado de estar al corriente de obligaciones fiscales y de la Seguridad Social.
+    </p>
+    <p>
+      <strong>Contacto:</strong> federacion@fedgolfclm.com · Teléfono: 949-262300<br>
+      Plaza de España 1, Primera Planta, Local 8 · 19200 Azuqueca de Henares (Guadalajara)
+    </p>
+  </div>
+</div>
+
+<?php
+get_footer();

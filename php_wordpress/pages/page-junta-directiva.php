@@ -1,0 +1,263 @@
+<?php
+/**
+ * Template Name: Junta Directiva y Asamblea
+ *
+ * @package FGCLM_Theme_v071
+ */
+
+get_header();
+?>
+
+<style>
+body { padding-top: 70px; }
+    .junta-section { padding: 64px 6rem; max-width: 1100px; margin: 0 auto; }
+    .junta-intro { font-size: 15px; color: var(--gray-600); line-height: 1.8; max-width: 720px; margin-bottom: 48px; }
+    .junta-block-title {
+      font-family: var(--font-display);
+      font-size: 1.5rem; font-weight: 700;
+      color: var(--green-dark);
+      margin-bottom: 24px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--gold);
+    }
+    .junta-sub-title {
+      font-family: var(--font-display);
+      font-size: 1.25rem; font-weight: 700;
+      color: var(--green-dark);
+      margin-top: 40px;
+      margin-bottom: 20px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--gray-200);
+    }
+    .junta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+      margin-bottom: 56px;
+    }
+    .junta-card {
+      background: var(--white);
+      border: 1.5px solid var(--gray-100);
+      padding: 28px 22px;
+      transition: all 0.2s;
+    }
+    .junta-card:hover { border-color: var(--gold); box-shadow: 0 6px 20px rgba(10,61,46,0.07); }
+    .junta-card-cargo {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+    .junta-card-nombre {
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--green-dark);
+      line-height: 1.3;
+    }
+    .junta-card-prov {
+      font-size: 12px;
+      color: var(--gray-300);
+      margin-top: 6px;
+    }
+    .junta-card-wide {
+      grid-column: 1 / -1;
+    }
+    .vocales-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 16px 24px;
+      margin-top: 16px;
+    }
+    .asamblea-info {
+      background: var(--gray-50);
+      border: 1px solid var(--gray-100);
+      padding: 32px 36px;
+      margin-bottom: 56px;
+    }
+    .asamblea-info p { font-size: 14px; color: var(--gray-600); line-height: 1.7; margin-bottom: 12px; }
+    .asamblea-info p:last-child { margin-bottom: 0; }
+    @media (max-width: 1100px) { .junta-section { padding: 48px 2.5rem; } }
+    @media (max-width: 640px) { .junta-section { padding: 32px 1.25rem; } }
+</style>
+
+<div class="page-hero">
+  <div class="page-hero-content">
+    <div class="page-hero-label">La Federación</div>
+    <h1>Junta Directiva <em>y Asamblea</em></h1>
+    <p>Conoce a las personas que forman los órganos de gobierno de la Federación de Golf de Castilla-La Mancha.</p>
+  </div>
+</div>
+
+<div class="junta-section">
+  <p class="junta-intro">
+    La Federación de Golf de Castilla-La Mancha se gobierna a través de su Junta Directiva, elegida democráticamente por los representantes de los clubes federados, y de la Asamblea General, máximo órgano de decisión de la entidad. Ambos organismos trabajan para garantizar el correcto funcionamiento y desarrollo del golf en las cinco provincias de la región.
+  </p>
+
+  <div class="junta-block-title">Composición de la Junta Directiva 2024-2028</div>
+  <div class="junta-grid">
+    <div class="junta-card">
+      <div class="junta-card-cargo">Presidente</div>
+      <div class="junta-card-nombre">Carlos Javier Gutiérrez García</div>
+    </div>
+    <div class="junta-card">
+      <div class="junta-card-cargo">Secretario</div>
+      <div class="junta-card-nombre">Fernando Cebrián Tapia</div>
+    </div>
+    <div class="junta-card">
+      <div class="junta-card-cargo">Vicepresidente 1</div>
+      <div class="junta-card-nombre">Isabel Sáez López</div>
+    </div>
+    <div class="junta-card">
+      <div class="junta-card-cargo">Vicepresidente 2</div>
+      <div class="junta-card-nombre">Pascual Martínez Cuesta</div>
+    </div>
+    <div class="junta-card">
+      <div class="junta-card-cargo">Relaciones Institucionales</div>
+      <div class="junta-card-nombre">José Vioque Lorenzo</div>
+    </div>
+    <div class="junta-card junta-card-wide">
+      <div class="junta-card-cargo">Vocales</div>
+      <div class="vocales-grid">
+        <div class="junta-card-nombre">María Encarna Hernández de Cáceres</div>
+        <div class="junta-card-nombre">Susana Navarro Gabaldón</div>
+        <div class="junta-card-nombre">Joaquín Mínguez Cano</div>
+        <div class="junta-card-nombre">Ángel Marquina Rivero</div>
+        <div class="junta-card-nombre">Jesús Ortega Jiménez</div>
+        <div class="junta-card-nombre">Jesús Martín López Dalda</div>
+        <div class="junta-card-nombre">Joaquín Mesas Esteso</div>
+        <div class="junta-card-nombre">Agustín Guarnizo Fúnez</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="junta-block-title">Asamblea General</div>
+  <div class="asamblea-info">
+    <p>
+      La Asamblea General es el órgano supremo de gobierno y representación de la Federación. Está integrada por los representantes de los clubes federados de las cinco provincias de Castilla-La Mancha: Albacete, Ciudad Real, Cuenca, Guadalajara y Toledo.
+    </p>
+    <p>
+      Se reúne en sesión ordinaria al menos una vez al año, durante el primer semestre, para aprobar las cuentas anuales, el presupuesto, la memoria de actividades y cualquier asunto de especial relevancia para la federación. Las sesiones extraordinarias pueden convocarse cuando las circunstancias así lo requieran.
+    </p>
+    <p>
+      Los clubes tienen derecho a representación en la Asamblea en función del número de licencias federativas que acrediten en la temporada en curso. Cada representante ostenta la voz y el voto de su club en los asuntos sometidos a deliberación.
+    </p>
+    <p>
+      Para consultar el reglamento de la Asamblea General o solicitar información sobre la convocatoria de sesiones, puede ponerse en contacto con la Secretaría General en: <strong>federacion@fedgolfclm.com</strong>
+    </p>
+  </div>
+
+  <div class="junta-block-title" style="border-bottom: none; margin-bottom: 0;">Composición de la Asamblea General 2024-2028</div>
+
+  <div class="junta-sub-title">Estamento Deportistas</div>
+  <div class="junta-grid">
+    <div class="junta-card">
+      <div class="junta-card-cargo">Albacete</div>
+      <div class="junta-card-nombre">José A. Barrajón Barrios</div>
+      <div class="junta-card-nombre" style="margin-top: 8px;">Antonio Fernández Saéz</div>
+    </div>
+    <div class="junta-card">
+      <div class="junta-card-cargo">Ciudad Real</div>
+      <div class="junta-card-nombre">José Luis Pozo Palomares</div>
+      <div class="junta-card-nombre" style="margin-top: 8px;">Agustín Guarnizo Fúnez</div>
+    </div>
+    <div class="junta-card">
+      <div class="junta-card-cargo">Cuenca</div>
+      <div class="junta-card-nombre">José Miguel Molina</div>
+      <div class="junta-card-nombre" style="margin-top: 8px;">Ángel Marquina Rivero</div>
+    </div>
+    <div class="junta-card">
+      <div class="junta-card-cargo">Guadalajara</div>
+      <div class="junta-card-nombre">Carlos J. Gutiérrez García</div>
+      <div class="junta-card-nombre" style="margin-top: 8px;">Jesús Ortega Jiménez</div>
+    </div>
+    <div class="junta-card">
+      <div class="junta-card-cargo">Toledo</div>
+      <div class="junta-card-nombre">Patricio Sánchez Castiñeira</div>
+      <div class="junta-card-nombre" style="margin-top: 8px;">Encarna Hernández de Cáceres</div>
+    </div>
+  </div>
+
+  <div class="junta-sub-title">Estamento Jueces y Árbitros</div>
+  <div class="junta-grid">
+    <div class="junta-card">
+      <div class="junta-card-cargo">Jueces y Árbitros</div>
+      <div class="junta-card-nombre">Isabel Sáez López</div>
+      <div class="junta-card-nombre" style="margin-top: 8px;">Óscar Herradura Pérez</div>
+    </div>
+  </div>
+
+  <div class="junta-sub-title">Estamento Clubes con Campo Verde</div>
+  <div class="junta-grid">
+    <div class="junta-card">
+      <div class="junta-card-cargo">Club de Golf Layos</div>
+      <div class="junta-card-nombre">Elías Núñez Galán</div>
+    </div>
+    <div class="junta-card">
+      <div class="junta-card-cargo">Club de Golf Palomarejos</div>
+      <div class="junta-card-nombre">Ernesto González Penín</div>
+    </div>
+    <div class="junta-card">
+      <div class="junta-card-cargo">Olalla Golf</div>
+      <div class="junta-card-nombre">José María García Jarabo</div>
+    </div>
+    <div class="junta-card">
+      <div class="junta-card-cargo">Señorío de Illescas</div>
+      <div class="junta-card-nombre">Javier Ínsula Martos</div>
+    </div>
+    <div class="junta-card">
+      <div class="junta-card-cargo">Golf de Valdeluz Montealvar</div>
+      <div class="junta-card-nombre">Iñigo Mencos Valdés</div>
+    </div>
+    <div class="junta-card">
+      <div class="junta-card-cargo">Abedul Golf</div>
+      <div class="junta-card-nombre">Francisco Botija Díaz</div>
+    </div>
+    <div class="junta-card">
+      <div class="junta-card-cargo">Golf Ciudad Real</div>
+      <div class="junta-card-nombre">Juan José Poblete Guerrero</div>
+    </div>
+    <div class="junta-card">
+      <div class="junta-card-cargo">Las Pinaillas Golf</div>
+      <div class="junta-card-nombre">Cristian Herrera Voorbraeck</div>
+    </div>
+    <div class="junta-card">
+      <div class="junta-card-cargo">Torrijos Golf</div>
+      <div class="junta-card-nombre">María Jesús Cudero Hernández</div>
+    </div>
+  </div>
+
+  <div class="junta-sub-title">Estamento Clubes con Campo Rústico</div>
+  <div class="junta-grid">
+    <div class="junta-card">
+      <div class="junta-card-cargo">Club de Golf Laguna del Tito</div>
+      <div class="junta-card-nombre">Joaquín Mesas Esteso</div>
+    </div>
+    <div class="junta-card">
+      <div class="junta-card-cargo">Golf Mudela</div>
+      <div class="junta-card-nombre">Manuel Astasio Molero</div>
+    </div>
+  </div>
+
+  <div class="junta-sub-title">Estamento Clubes sin Campo</div>
+  <div class="junta-grid">
+    <div class="junta-card">
+      <div class="junta-card-cargo">Tomelloso Club de Golf</div>
+      <div class="junta-card-nombre">Ángel López Martínez</div>
+    </div>
+  </div>
+
+  <div class="junta-sub-title">Estamento Profesionales</div>
+  <div class="junta-grid">
+    <div class="junta-card">
+      <div class="junta-card-cargo">Profesionales</div>
+      <div class="junta-card-nombre">Jesús M. López Dalda</div>
+      <div class="junta-card-nombre" style="margin-top: 8px;">Rubén Pardo Rodríguez</div>
+    </div>
+  </div>
+</div>
+
+<?php
+get_footer();

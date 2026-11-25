@@ -1,0 +1,561 @@
+<?php
+/**
+ * Template Name: Escuela de Golf FGCLM
+ *
+ * @package FGCLM_Theme_v071
+ */
+
+get_header();
+
+$p_id = get_the_ID();
+$escuela_year   = get_post_meta( $p_id, '_escuela_year', true );
+if ( empty( $escuela_year ) ) {
+    $escuela_year = '2026';
+}
+$pdf_tarifas    = get_post_meta( $p_id, '_escuela_pdf_tarifas', true );
+if ( empty( $pdf_tarifas ) ) {
+    $pdf_tarifas = 'https://www.fedgolfclm.com/wp-content/uploads/2026/03/Tarifas-T2-2026-Escuela.pdf';
+}
+$pdf_condiciones = get_post_meta( $p_id, '_escuela_pdf_condiciones', true );
+if ( empty( $pdf_condiciones ) ) {
+    $pdf_condiciones = 'https://www.fedgolfclm.com/wp-content/uploads/2026/03/CLASES-FGCLM-T2-2026.pdf';
+}
+$pdf_cal_t1     = get_post_meta( $p_id, '_escuela_pdf_calendario_t1', true );
+if ( empty( $pdf_cal_t1 ) ) {
+    $pdf_cal_t1 = 'https://www.fedgolfclm.com/wp-content/uploads/2025/12/Calendario-clases-Trimestre-1-Escuela-FGCLM-2026.pdf';
+}
+$pdf_cal_t2     = get_post_meta( $p_id, '_escuela_pdf_calendario_t2', true );
+if ( empty( $pdf_cal_t2 ) ) {
+    $pdf_cal_t2 = 'https://www.fedgolfclm.com/wp-content/uploads/2026/03/Calendario-T2-2026-Escuela.pdf';
+}
+$form_juvenil   = get_post_meta( $p_id, '_escuela_form_juvenil', true );
+if ( empty( $form_juvenil ) ) {
+    $form_juvenil = 'https://docs.google.com/forms/d/e/1FAIpQLSeMaLIzC5rklPrNV2p2dIYn9UGNDFvh7UFJ7r6WDlB3fVOPxg/viewform?pli=1';
+}
+$form_adultos   = get_post_meta( $p_id, '_escuela_form_adultos', true );
+if ( empty( $form_adultos ) ) {
+    $form_adultos = 'https://docs.google.com/forms/d/e/1FAIpQLSenYCZRFqUoeIe_2v98lZuFIAR490WxFgGhiZEf-FFessR-ag/viewform';
+}
+?>
+
+<style>
+body {
+      padding-top: 70px;
+    }
+
+    /* Tarjetas de modalidades */
+    .modalidades-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+      margin-top: 2rem;
+    }
+
+    .modalidad-card {
+      background: var(--white);
+      border: 1px solid var(--gray-100);
+      padding: 36px 28px;
+      transition: all 0.25s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .modalidad-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s;
+    }
+
+    .modalidad-card:hover::after {
+      transform: scaleX(1);
+    }
+
+    .modalidad-card:hover {
+      background: var(--gray-50);
+      box-shadow: 0 8px 24px rgba(10, 61, 46, 0.08);
+    }
+
+    .modalidad-icon {
+      font-size: 36px;
+      margin-bottom: 16px;
+    }
+
+    .modalidad-title {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--green-dark);
+      margin-bottom: 10px;
+    }
+
+    .modalidad-desc {
+      font-size: 13px;
+      color: var(--gray-600);
+      line-height: 1.6;
+    }
+
+    /* Precios */
+    .precios-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-top: 2rem;
+    }
+
+    .precio-card {
+      background: var(--white);
+      border: 2px solid var(--gray-100);
+      padding: 32px 24px;
+      text-align: center;
+      transition: all 0.25s;
+      position: relative;
+    }
+
+    .precio-card.destacado {
+      border-color: var(--gold);
+      background: var(--gold-light);
+    }
+
+    .precio-card.destacado .precio-badge {
+      position: absolute;
+      top: -11px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--green-dark);
+      color: var(--gold);
+      font-size: 9px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      padding: 3px 14px;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+
+    .precio-nombre {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--gray-600);
+      margin-bottom: 12px;
+    }
+
+    .precio-valor {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--green-dark);
+      line-height: 1;
+    }
+
+    .precio-valor sup {
+      font-size: 1rem;
+      vertical-align: super;
+    }
+
+    .precio-valor span {
+      font-size: 1rem;
+      font-weight: 400;
+    }
+
+    .precio-detalle {
+      font-size: 12px;
+      color: var(--gray-300);
+      margin-top: 6px;
+    }
+
+    .precio-incluye {
+      list-style: none;
+      margin-top: 20px;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .precio-incluye li {
+      font-size: 12px;
+      color: var(--gray-600);
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .precio-incluye li::before {
+      content: '✓';
+      color: var(--green-accent);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    /* Inscripciones */
+    .inscripciones-section {
+      background: var(--green-dark);
+      padding: 80px 6rem;
+    }
+
+    .inscripciones-section .section-label {
+      color: var(--gold);
+    }
+
+    .inscripciones-section .section-label::before {
+      background: var(--gold);
+    }
+
+    .inscripciones-section .section-title {
+      color: var(--white);
+    }
+
+    .docs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 2.5rem;
+    }
+
+    .doc-block {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 28px 24px;
+      transition: background 0.25s;
+    }
+
+    .doc-block:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .doc-block-label {
+      font-size: 9px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+
+    .doc-block-title {
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 16px;
+      line-height: 1.3;
+    }
+
+    .doc-link {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255, 255, 255, 0.75);
+      font-size: 13px;
+      font-weight: 500;
+      text-decoration: none;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+      transition: color 0.2s;
+    }
+
+    .doc-link:last-child {
+      border-bottom: none;
+    }
+
+    .doc-link:hover {
+      color: var(--gold);
+    }
+
+    .doc-link::before {
+      content: '→';
+      color: var(--gold);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .form-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      margin-top: 2.5rem;
+    }
+
+    .form-card {
+      background: var(--white);
+      padding: 36px 32px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 16px;
+      transition: box-shadow 0.25s;
+    }
+
+    .form-card:hover {
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+    }
+
+    .form-card-icon {
+      font-size: 40px;
+    }
+
+    .form-card-title {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--green-dark);
+      line-height: 1.2;
+    }
+
+    .form-card-desc {
+      font-size: 13px;
+      color: var(--gray-600);
+      line-height: 1.6;
+    }
+
+    .btn-form {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--gold);
+      color: var(--green-dark);
+      font-weight: 700;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 12px 24px;
+      text-decoration: none;
+      transition: background 0.2s;
+      align-self: center;
+      margin-top: auto;
+    }
+
+    .btn-form:hover {
+      background: #d4b36a;
+    }
+
+    /* Profesores */
+    .profesores-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+      margin-top: 2.5rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .profesor-card {
+      background: var(--gray-50);
+      padding: 40px 32px;
+      text-align: center;
+      border: 1px solid var(--gray-100);
+      transition: all 0.3s ease;
+      border-radius: 8px;
+    }
+
+    .profesor-card:hover {
+      background: var(--white);
+      box-shadow: 0 12px 32px rgba(10, 61, 46, 0.12);
+      transform: translateY(-4px);
+    }
+
+    .profesor-avatar {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      margin: 0 auto 24px;
+      border: 3px solid var(--gold);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      background: var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 54px;
+      color: var(--green-dark);
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+
+    .profesor-avatar span {
+      color: var(--green-dark);
+    }
+
+    .profesor-nombre {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--green-dark);
+      margin-bottom: 6px;
+    }
+
+    .profesor-cargo {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+
+    .profesor-bio {
+      font-size: 14px;
+      color: var(--gray-600);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 900px) {
+      .inscripciones-section {
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+      }
+
+      .precios-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .inscripciones-section {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+        padding-top: 40px;
+        padding-bottom: 40px;
+      }
+    }
+</style>
+
+<div class="page-hero">
+    <div class="page-hero-content">
+      <div class="page-hero-label">Formación oficial</div>
+      <h1>Escuela de Golf <em>FGCLM</em></h1>
+      <p>Programas para todos los niveles, desde iniciación hasta perfeccionamiento técnico avanzado.</p>
+    </div>
+  </div>
+
+  <!-- SOBRE LA ESCUELA -->
+  <section style="background: var(--white);">
+    <div class="section-header">
+      <div class="section-label">Sobre la escuela</div>
+      <h2 class="section-title">Tu primer paso en el golf</h2>
+    </div>
+    <div class="modalidades-grid">
+      <div class="modalidad-card">
+        <div class="modalidad-icon">
+          <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+        </div>
+        <div class="modalidad-title">Clases particulares</div>
+        <p class="modalidad-desc">Enseñanza personalizada adaptada a los objetivos y nivel de cada jugador, con
+          seguimiento individualizado.</p>
+      </div>
+      <div class="modalidad-card">
+        <div class="modalidad-icon">
+          <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path><line x1="4" y1="22" x2="4" y2="15"></line></svg>
+        </div>
+        <div class="modalidad-title">Cursos de iniciación</div>
+        <p class="modalidad-desc">Dirigidos a quienes se acercan por primera vez al golf. Aprende los fundamentos
+          técnicos, reglamento y etiqueta.</p>
+      </div>
+      <div class="modalidad-card">
+        <div class="modalidad-icon">
+          <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+        </div>
+        <div class="modalidad-title">Cursos trimestrales adultos</div>
+        <p class="modalidad-desc">Con seguimiento continuo y evolución progresiva a lo largo del trimestre. Para
+          jugadores con o sin hándicap.</p>
+      </div>
+      <div class="modalidad-card">
+        <div class="modalidad-icon">
+          <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        </div>
+        <div class="modalidad-title">Escuela Juvenil</div>
+        <p class="modalidad-desc">Cursos para niños y jóvenes de 5 a 18 años con metodología adaptada que combina
+          aprendizaje, diversión y valores deportivos.</p>
+      </div>
+      <div class="modalidad-card">
+        <div class="modalidad-icon">
+          <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
+        </div>
+        <div class="modalidad-title">Clinics</div>
+        <p class="modalidad-desc">Sesiones grupales temáticas enfocadas en aspectos concretos del juego: approach,
+          putting, salida, bunker…</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOCUMENTACIÓN E INSCRIPCIONES -->
+  <section class="inscripciones-section" id="inscripciones">
+    <div class="section-header">
+      <div class="section-label">Información y acceso</div>
+      <h2 class="section-title">Tarifas, horarios e inscripciones</h2>
+    </div>
+
+    <div class="docs-grid">
+      <div class="doc-block">
+        <div class="doc-block-label">Documentación</div>
+        <div class="doc-block-title">Tarifas y servicios Escuela de Golf FGCLM</div>
+        <a href="<?php echo esc_url( $pdf_tarifas ); ?>" target="_blank"
+          class="doc-link">Acceso a la información (PDF)</a>
+        <a href="<?php echo esc_url( $pdf_condiciones ); ?>" target="_blank"
+          class="doc-link">Términos y condiciones (PDF)</a>
+      </div>
+      <div class="doc-block">
+        <div class="doc-block-label">Calendario</div>
+        <div class="doc-block-title">Horario trimestral — Primer y Segundo Trimestre <?php echo esc_html( $escuela_year ); ?></div>
+        <a href="<?php echo esc_url( $pdf_cal_t1 ); ?>"
+          target="_blank" class="doc-link">Enero – Febrero – Marzo (PDF)</a>
+        <a href="<?php echo esc_url( $pdf_cal_t2 ); ?>" target="_blank"
+          class="doc-link">Abril – Mayo – Junio (PDF)</a>
+      </div>
+    </div>
+
+    <div class="form-cards">
+      <div class="form-card">
+        <div class="form-card-icon">
+          <svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        </div>
+        <div class="form-card-title">Escuela Juvenil FGCLM <?php echo esc_html( $escuela_year ); ?></div>
+        <p class="form-card-desc">Inscripción para niños y jóvenes de 5 a 18 años. Completa el formulario de forma
+          individual para cada participante.</p>
+        <a href="<?php echo esc_url( $form_juvenil ); ?>"
+          target="_blank" class="btn-form">Acceder al formulario →</a>
+      </div>
+      <div class="form-card">
+        <div class="form-card-icon">
+          <svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+        </div>
+        <div class="form-card-title">Escuela de Adultos FGCLM <?php echo esc_html( $escuela_year ); ?></div>
+        <p class="form-card-desc">Inscripción en cursos trimestrales, clases particulares y clinics para adultos. Un
+          formulario por participante.</p>
+        <a href="<?php echo esc_url( $form_adultos ); ?>"
+          target="_blank" class="btn-form">Acceder al formulario →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROFESORES -->
+  <section style="background: var(--white);">
+    <div class="section-header">
+      <div class="section-label">Nuestro equipo</div>
+      <h2 class="section-title">Profesores titulados</h2>
+    </div>
+    <div class="profesores-grid">
+      <div class="profesor-card">
+        <div class="profesor-avatar">
+          <span>DP</span>
+        </div>
+        <div class="profesor-nombre">David Pinza Jiménez</div>
+        <div class="profesor-cargo">Profesor Titulado & Presidente del Comité Juvenil</div>
+        <p class="profesor-bio">Destacada figura del golf castellanomanchego, formado en la Escuela Nacional Blume. Como Técnico Deportivo Grado 1 por la RFEG, está especializado en iniciación, perfeccionamiento técnico y el desarrollo integral de la cantera regional.</p>
+      </div>
+    </div>
+  </section>
+
+<?php
+get_footer();
